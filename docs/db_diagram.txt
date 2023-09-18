@@ -1,0 +1,66 @@
+Table users as User {
+  id int [pk, increment]
+  full_name varchar [not null]
+  email varchar [not null, unique]
+  gender user_gender [not null]
+  age int [not null, note: "In years"]
+  weight float [not null, note: "In kilograms"]
+  height int [not null, note: "In Centimeters"]
+  goal user_goals [not null]
+  activity_level activity_level [not null]
+  created_at timestampz [not null]
+  updated_at timestampz [not null]
+}
+
+Enum user_gender {
+  male
+  female
+}
+
+Enum user_goals {
+  get_fitter
+  lose_weight
+  gain_muscle_mass
+  gain_more_flexible
+  health
+}
+
+Enum activity_level {
+  rookie
+  beginner
+  intermediate
+  advanced
+  true_beast
+}
+
+
+Table Exercises {
+  id int [pk, increment]
+  name varchar [not null, unique]
+  primary_muscle muscles
+  image varchar [note: "link para a imagem demonstrando exercicio"]
+}
+
+Enum muscles {
+  triceps
+  biceps
+  peito_medio
+  peito_inferior
+  peito_superior
+  abdomen
+}
+
+Table user_exercises {
+  user_id int [not null]
+  exercise_id int [not null]
+
+  weight int [note: "In kilograms"]
+  duration int [note: "Time in exercise in seconds"]
+  series int [note: "How many series were made"]
+  repetitions list [note: "How many repetitions were made"]
+  created_at datetime [default: `now()`]
+  
+  Indexes {
+    (user_id, exercise_id) [name:'id']
+  }
+}
