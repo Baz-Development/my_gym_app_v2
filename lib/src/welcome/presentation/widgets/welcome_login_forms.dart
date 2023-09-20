@@ -67,6 +67,7 @@ class _WelcomeLoginFormsState extends State<WelcomeLoginForms> {
                     children: [
                       const Spacer(),
                       GestureDetector(
+                        key: const Key('forgot_password_button_in_login'),
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context) {
                             return const WelcomeForgetPasswordScreen();
@@ -114,6 +115,7 @@ class _WelcomeLoginFormsState extends State<WelcomeLoginForms> {
                     ),
                     const Spacer(),
                     ElevatedButton(
+                      key: const Key('login_button'),
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) {
                           return const HomeScreen();

@@ -122,6 +122,7 @@ class _WelcomeSignupFormsState extends State<WelcomeSignupForms> {
                     ),
                     const Spacer(),
                     ElevatedButton(
+                      key: const Key('signup_button'),
                       onPressed: () {
                         // signup logic
                         Navigator.push(context, MaterialPageRoute(builder: (context) {

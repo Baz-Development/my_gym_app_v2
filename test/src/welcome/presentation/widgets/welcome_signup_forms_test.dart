@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:my_gym_app_v2/src/signup/presentation/views/signup_screen.dart';
 import 'package:my_gym_app_v2/src/welcome/presentation/widgets/welcome_signup_forms.dart';
 
 void main() {
@@ -48,6 +49,22 @@ void main() {
 
     expect(find.byIcon(Icons.visibility_off), findsNothing);
     expect(find.byIcon(Icons.visibility), findsNWidgets(2));
+  });
+
+  testWidgets('should render correctly', (WidgetTester tester) async {
+    // Build the widget
+    await tester.pumpWidget(
+      const MaterialApp(
+        home: Scaffold(
+          body: WelcomeSignupForms(),
+        ),
+      ),
+    );
+
+    await tester.tap(find.byKey(const Key('signup_button')));
+    await tester.pumpAndSettle();
+
+    expect(find.byType(SignupScreen), findsOneWidget);
   });
 
 }

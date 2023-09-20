@@ -21,6 +21,7 @@ class _WelcomeTabBarState extends State<WelcomeTabBar> {
         Row(
           children: [
             GestureDetector(
+              key: const Key('login_tab_button'),
               onTap: () {
                 setState(() {
                   isOnLogin = true;
@@ -36,6 +37,7 @@ class _WelcomeTabBarState extends State<WelcomeTabBar> {
               width: 30,
             ),
             GestureDetector(
+              key: const Key('signup_tab_button'),
               onTap: () {
                 setState(() {
                   isOnLogin = false;
