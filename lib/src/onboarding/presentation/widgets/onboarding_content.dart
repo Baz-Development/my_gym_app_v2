@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OnboardingContentScreen extends StatelessWidget {
-  const OnboardingContentScreen(
+class OnboardingContent extends StatelessWidget {
+  const OnboardingContent(
       {super.key,
       required this.title,
       required this.subtitle,

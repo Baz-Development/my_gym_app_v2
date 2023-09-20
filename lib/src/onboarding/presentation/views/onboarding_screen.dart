@@ -28,17 +28,17 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             },
             controller: _pageController,
             children: const [
-              OnboardingContentScreen(
+              OnboardingContent(
                 title: 'Meet your coach',
                 subtitle: 'start your journey',
                 image: 'assets/onbording/onboarding1.png',
               ),
-              OnboardingContentScreen(
+              OnboardingContent(
                 title: 'Create a workout plan',
                 subtitle: 'to stay fit',
                 image: 'assets/onbording/onboarding2.png',
               ),
-              OnboardingContentScreen(
+              OnboardingContent(
                 title: 'Action is the',
                 subtitle: 'key to all success',
                 image: 'assets/onbording/onboarding3.png',
